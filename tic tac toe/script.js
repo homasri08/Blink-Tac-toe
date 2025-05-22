@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    let roundsPlayed = 0;
     let timer = 0;
     let timerInterval;
     let scores = { 1: 0, 2: 0 };
@@ -98,9 +99,22 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInterval(timerInterval);
         scores[currentPlayer]++;
         document.getElementById(`score${currentPlayer}`).textContent = scores[currentPlayer];
+        roundsPlayed++;
+        document.getElementById("rounds").textContent = roundsPlayed;
+
         disableBoard();
         showPlayAgain();
         winSound.play();
+        return;
+      }
+      if (!boardState.includes(null)) {
+        document.getElementById("message").textContent = "It's a draw!";
+        document.getElementById("turn-info").textContent = "";
+        clearInterval(timerInterval);
+        roundsPlayed++;
+        document.getElementById("rounds").textContent = roundsPlayed;
+        disableBoard();
+        showPlayAgain();
         return;
       }
       currentPlayer = currentPlayer === 1 ? 2 : 1;
