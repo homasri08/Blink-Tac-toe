@@ -252,7 +252,7 @@ button:hover {
     opacity: 0.75;
     margin-top: 20px;
   }
-.cell {
+  .cell {
     transition: background-color 0.3s ease;
   }
   .cell:hover:empty {
@@ -263,4 +263,13 @@ button:hover {
   body.dark .cell:hover:empty {
     background-color: #333;
   }
+  #scoreboard {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+  
+  
   
