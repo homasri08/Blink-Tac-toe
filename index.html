@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blink Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="theme-toggle">
+      <label for="theme-switch">🌙 Dark Mode</label>
+      <input type="checkbox" id="theme-switch" />
+    </div>
+    <h1>Blink Tac Toe 🧠</h1>
+    <div id="setup">
+        <h2>🎮 Choose Your Emoji Categories</h2>
+      
+        <div class="player-select">
+          <label>Player 1:</label>
+          <select id="player1-category">
+            <option value="tech">Tech 💻</option>
+            <option value="vehicles">Vehicles 🚗</option>
+            <option value="faces">Faces 😊</option>
+          </select>
+        </div>
+      
+        <div class="player-select">
+          <label>Player 2:</label>
+          <select id="player2-category">
+            <option value="tech">Tech 💻</option>
+            <option value="vehicles">Vehicles 🚗</option>
+            <option value="faces">Faces 😊</option>
+          </select>
+        </div>
+      
+        <button id="start-btn">Start Game</button>
+      </div>
+    <div id="help-section" style="margin-bottom: 20px;">
+        <button onclick="toggleHelp()" style="margin-bottom: 10px;">❓ Show / Hide Help</button>
+        <div id="help-content" style="display: none; border: 1px solid #ccc; padding: 15px; border-radius: 10px; background-color: #f9f9f9;">
+          <h3>🧠 How to Play Blink Tac Toe</h3>
+          <ul>
+            <li>This is a 2-player game played on a 3x3 grid using fun emojis 🎉.</li>
+            <li>Each player chooses an emoji category (Tech, Vehicles, Faces).</li>
+            <li>Players take turns placing a random emoji from their category on the grid.</li>
+            <li><strong>Only 3 emojis per player</strong> can be on the board at a time.</li>
+            <li>Placing a 4th emoji will make the oldest one vanish (FIFO rule).</li>
+            <li>You <strong>cannot place a new emoji where the oldest one was</strong>.</li>
+            <li>First to get 3 emojis in a line (horizontally, vertically, or diagonally) wins! 🏆</li>
+          </ul>
+          <p>Good luck and have fun! 🚀</p>
+        </div>
+      </div>
+      
+      
+    <div id="game" class="grid">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+      </div> 
+      <div id="scoreboard">
+        <div>⏱️ Time: <span id="timer">0</span> sec</div>
+        <div>🎯 P1 Score: <span id="score1">0</span> | P2 Score: <span id="score2">0</span></div>
+        <div>🕹️ Rounds Played: <span id="rounds">0</span></div>
+      </div>
+      
+    <div id="turn-info"></div>     
+    <div id="message"></div>
+    <p id="author-signature">Spearheaded the project by Homasri Mandyam</p>
+    <button id="restartBtn" style="display:none;">Play Again</button>
+  </div>
+  <script src="script.js"></script>
+  <audio id="click-sound" src="click.mp3"></audio>
+<audio id="win-sound" src="win.mp3"></audio>
+<audio id="restart-sound" src="restart.mp3"></audio>
+</body>
+</html>
