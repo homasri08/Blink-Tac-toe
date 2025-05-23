@@ -16,42 +16,52 @@
     --help-text: #ffffff;
     --help-content-bg: #f0f4f8;
   }
+  body.dark {
+    --bg-color: #25253a;
+    --container-color: #3b3b5c;
+    --primary-color: #9c88ff;
+    --accent-color: #ffffff;
+    --text-color: #8dadc2;
+    --hover-color: #8c7ae6;
+    --winner-color: #b7b0e4;
+    --winner-shadow: #9c88ff;
+    --winner-inset: #82589F;
+    --font-heading: 'Courier New', monospace;
+    --font-body: 'Fira Code', monospace;
+    --help-bg: #b0a5ff;
+    --help-bg-hover: #8c7ae6;
+    --help-text: #1e1e2f;
+    --help-content-bg: #2a2a3a;
+    background-image:url('image2.jpg');
+  }
   
-
-body.dark {
-  --bg-color: #25253a;
-  --container-color: #3b3b5c;
-  --primary-color: #9c88ff;
-  --accent-color: #ffffff;
-  --text-color: #8dadc2;
-  --hover-color: #8c7ae6;
-  --winner-color: #b7b0e4;
-  --winner-shadow: #9c88ff;
-  --winner-inset: #82589F;
-  --font-heading: 'Courier New', monospace;
-  --font-body: 'Fira Code', monospace;
-  --help-bg: #b0a5ff;
-  --help-bg-hover: #8c7ae6;
-  --help-text: #1e1e2f;
-    --help-content-bg: #2a2a3a; 
-
-
-}
 body {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-body);
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  transition: background 0.3s, color 0.3s;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    background-image: url('image.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.55); 
+    z-index: -1;                        
+    pointer-events: none;
+  }
 .container {
   background-color: var(--container-color);
   padding: 30px;
@@ -69,7 +79,6 @@ h1 {
   color: var(--accent-color);
   font-family: var(--font-heading);
 }
-
 #setup {
   margin-bottom: 20px;
 }
